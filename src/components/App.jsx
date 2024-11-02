@@ -3,8 +3,7 @@ import './App.css';
 import Feedback from './Footer/Feedback.jsx';
 import Header from './Header/Description.jsx';
 import Options from './Main/Options/Options.jsx';
-
-
+import Notification from './Main/Notification/Notification .jsx';
 
 function App() {
   // counter
@@ -49,17 +48,17 @@ function App() {
   const closeFeedback = () => {
     setIsClick(true)
   }
-
-
+  // change
+  const positiveFeedback = totalFeedback == 0 ? 0 : Math.round((good / totalFeedback) * 100);
 
   return (
     <div className='wrap_app'>
       <Header />
-      <Options props={counter} updateFeedback={updateFeedback} setCounter={ setCounter} totalFeedback ={totalFeedback}/>
-      <div onClick={openFeedback} className="div">
-        {isClick ? <p>No feedback yet</p> : <Feedback props={counter} totalFeedback = {totalFeedback}/>}
+      <Options counter={counter} updateFeedback={updateFeedback} setCounter={ setCounter} totalFeedback ={totalFeedback}/>
+      <div onClick={openFeedback}>
+        {isClick ? <Notification /> : <Feedback feedbackCounts={counter} totalFeedback = {totalFeedback} positiveFeedback= {positiveFeedback}/>}
       </div>
-    </div>
+      </div>
   )
 }
 

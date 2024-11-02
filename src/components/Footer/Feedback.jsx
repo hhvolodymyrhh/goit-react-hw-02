@@ -1,9 +1,6 @@
 import styles from "./Feedback.module.css";
 
-const Feedback = ({ props, totalFeedback = 0 }) => {
-  
-  const { good = 0, neutral = 0, bad = 0, } = props
-  const positiveFeedback = totalFeedback == 0 ? 0 : Math.round((good / totalFeedback) * 100);
+const Feedback = ({feedbackCounts:{good = 0, neutral = 0,bad = 0}, totalFeedback, positiveFeedback}) => {
 
   return (
     <footer>

@@ -2,9 +2,9 @@ import styles from "./Options.module.css";
 //використання className={clsx("add", "vaa")}
 // import clsx from "clsx";
 
-const Options = ( {props, updateFeedback, setCounter, totalFeedback } ) => {
+const Options = ( {counter, updateFeedback, setCounter, totalFeedback } ) => {
   // console.log(onIncrement)
-    const { good, neutral, bad } = props;
+    const { good, neutral, bad } = counter;
 
   
   const handleReset = () => {
