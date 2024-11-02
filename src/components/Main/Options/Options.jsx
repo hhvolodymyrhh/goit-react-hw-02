@@ -2,14 +2,9 @@ import styles from "./Options.module.css";
 //використання className={clsx("add", "vaa")}
 // import clsx from "clsx";
 
-const Options = ( {counter, updateFeedback, setCounter, totalFeedback } ) => {
+const Options = ( {counter, updateFeedback, handleReset, totalFeedback } ) => {
   // console.log(onIncrement)
     const { good, neutral, bad } = counter;
-
-  
-  const handleReset = () => {
-    setCounter({ good: 0, neutral: 0, bad: 0 });
-  };
 
   return (
     <ul className={styles.list}>

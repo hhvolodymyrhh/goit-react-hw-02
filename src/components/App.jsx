@@ -19,6 +19,10 @@ function App() {
     bad: 0}
   });
 
+    const handleReset = () => {
+    setCounter({ good: 0, neutral: 0, bad: 0 });
+  };
+
     // localStorage
   //  потрібна перевірка в useState на наявність данних
   // прокидування в локальне наявних при зміні дата
@@ -54,7 +58,7 @@ function App() {
   return (
     <div className='wrap_app'>
       <Header />
-      <Options counter={counter} updateFeedback={updateFeedback} setCounter={ setCounter} totalFeedback ={totalFeedback}/>
+      <Options counter={counter} updateFeedback={updateFeedback} handleReset={ handleReset} totalFeedback ={totalFeedback}/>
       <div onClick={openFeedback}>
         {isClick ? <Notification /> : <Feedback feedbackCounts={counter} totalFeedback = {totalFeedback} positiveFeedback= {positiveFeedback}/>}
       </div>
